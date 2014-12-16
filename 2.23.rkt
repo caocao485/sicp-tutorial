@@ -1,0 +1,10 @@
+(define(for-each1 proc items)
+    (if(null? items)
+       (newline)
+       (begin(proc(car items))
+        (for-each1 proc (cdr items)))))
+(define (for-each2 p lst)
+    (if (not (null? lst))
+        (begin
+            (p (car lst))
+            (for-each2 p (cdr lst)))))
